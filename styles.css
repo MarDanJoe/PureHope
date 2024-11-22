@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-top: 80px; /* Offset for fixed navbar */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.brand-name {
+    font-size: 2.5rem; /* Large and prominent */
+    font-weight: 700; /* Bold but elegant */
+    font-family: 'Playfair Display', serif; /* Adds elegance */
+    color: #333; /* Sophisticated dark color */
+    text-transform: uppercase; /* Creates a formal look */
+    letter-spacing: 0.15em; /* Adds a spaced-out, airy feel */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Navbar Brand Alignment */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensures the logo and text align to the left */
+    flex-grow: 1; /* Allows the brand to stretch across */
+}
+
+/* Navbar Container Fix for Alignment */
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Ensures hamburger button stays on the right */
+    align-items: center;
+}
+
+/* Hamburger Button Alignment */
+.navbar-toggler {
+    margin-left: auto; /* Pushes it to the far right */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar {
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+}
+
+.hero-section {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(80, 77, 77, 0.5);
+}
+
+.hero-section h1, .hero-section p {
+    position: relative;
+    z-index: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    display: none;
+}
+
+.back-to-top:hover {
+    background-color: #333;
+}
+
+body.dark-mode .back-to-top {
+    background-color: #fff;
+    color: #000;
+}
+
+.social-icons a {
+    color: #333;
+}
+
+body.dark-mode .social-icons a {
+    color: #e0e0e0;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .hero-section {
+        height: 70vh;
+    }
+    .brand-name {
+        font-size: 1.5rem; /* Scale down for mobile */
+        letter-spacing: 0.1em;
+    }
+
+    .navbar-brand {
+        flex-grow: unset; /* Prevent the logo from taking too much space */
+    }
+}
+
+/* Lazy Loading Images */
+.lazyload {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazyloaded {
+    opacity: 1;
+}
